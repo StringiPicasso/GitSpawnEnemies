@@ -5,21 +5,22 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Transform[] _spawnPoints;
-    [SerializeField] private  Enemy enemy;
+    [SerializeField] private Enemy _enemy;
+    [SerializeField] private float _timeBetweenSpawn;
 
     private void Start()
     {
-        StartCoroutine(Fade());
+        StartCoroutine(AppearEnemy());
     }
 
-    private IEnumerator Fade()
+    private IEnumerator AppearEnemy()
     {
+        var timeBetweenSpawn = new WaitForSeconds(_timeBetweenSpawn);
+        
         while (true)
         {
-            float _timeBetweenSpawn = 2f;
-            var timeBetweenSpawn = new WaitForSeconds(_timeBetweenSpawn);
             int spawnPointNumber = Random.Range(0, _spawnPoints.Length);
-            Instantiate(enemy, _spawnPoints[spawnPointNumber]);
+            Instantiate(_enemy, _spawnPoints[spawnPointNumber]);
         
             yield return timeBetweenSpawn;
         }

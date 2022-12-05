@@ -338,7 +338,8 @@ MonoBehaviour:
   - {fileID: 330885959}
   - {fileID: 528154686}
   - {fileID: 1008370822}
-  enemy: {fileID: 4908785912762968101, guid: 00bce6e5c6b62a74b8e0014868311d3e, type: 3}
+  _enemy: {fileID: 4908785912762968101, guid: 00bce6e5c6b62a74b8e0014868311d3e, type: 3}
+  _timeBetweenSpawn: 2
 --- !u!4 &825042035
 Transform:
   m_ObjectHideFlags: 0
